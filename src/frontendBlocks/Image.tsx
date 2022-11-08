@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 type Props = {
   alt: string;
@@ -12,6 +12,11 @@ const Wrapper = styled.figure`
 
   caption {
     display: block;
+  }
+
+  img {
+    aspect-ratio: 16/9;
+    width: 100%;
   }
 `;
 
