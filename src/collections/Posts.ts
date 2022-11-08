@@ -1,4 +1,5 @@
 import { CollectionConfig } from 'payload/types';
+import Image from '../blocks/Image';
 
 const Posts: CollectionConfig = {
   slug: 'posts',
@@ -26,7 +27,7 @@ const Posts: CollectionConfig = {
     {
       name: 'category',
       type: 'relationship',
-      relationTo: 'categories'
+      relationTo: 'categories',
     },
     {
       name: 'tags',
@@ -36,7 +37,13 @@ const Posts: CollectionConfig = {
     },
     {
       name: 'content',
-      type: 'richText'
+      type: 'blocks',
+      minRows: 0,
+      maxRows: 20,
+      blocks: [Image],
+      admin: {
+        className: 'blocks-field--content',
+      },
     },
     {
       name: 'status',
@@ -54,9 +61,9 @@ const Posts: CollectionConfig = {
       defaultValue: 'draft',
       admin: {
         position: 'sidebar',
-      }
-    }
+      },
+    },
   ],
-}
+};
 
 export default Posts;
