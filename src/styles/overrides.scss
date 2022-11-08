@@ -1,0 +1,125 @@
+#field-content {
+  // Individual block
+  .blocks-field__row.collapsible:not(.collapsible--collapsed) {
+    border-color: transparent;
+    border-radius: 0;
+    margin: 0;
+    position: relative;
+
+    .collapsible__content {
+      padding: 0;
+      position: relative;
+    }
+
+    // Edit column
+    &[data-dragging="true"] {
+      .blocks-field__edit-group {
+        opacity: 0;
+        transition: opacity 0s 0s;
+      }
+    }
+    .blocks-field__edit-group {
+      background: white;
+      border-left: 1px solid lightgray;
+      height: 100vh;
+      margin-right: 0;
+      margin-top: 0;
+      opacity: 1;
+      overflow: scroll;
+      position: fixed;
+      right: 0;
+      top: 0;
+      transition: opacity 0s 0.4s;
+      width: 450px;
+      z-index: 35;
+
+      .collapsible__content {
+        padding: 1.9230769231rem;
+      }
+
+      // Thumbs
+      .upload {
+        .thumbnail {
+          margin-right: 20px;
+        }
+        .file-details__main-detail {
+          padding: 0;
+
+          .file-meta > *:not(.file-meta__url) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // Reposition block's top bar
+    & > .collapsible__toggle-wrap {
+      position: static;
+      transition: all 0.2s ease;
+
+      .collapsible__header-wrap {
+        display: none;
+      }
+
+      .collapsible__drag {
+        // background: #ddd;
+        display: none;
+        left: 0;
+        opacity: 1;
+        transform: translateX(-100%);
+        top: -1px;
+        height: 25px;
+        z-index: 9;
+      }
+
+      .collapsible__toggle {
+        display: none;
+        height: 100%;
+        left: -25px;
+        padding: 0;
+        position: absolute;
+        width: 25px;
+      }
+
+      .collapsible__actions-wrap {
+        display: none;
+        left: -25px;
+        flex-direction: column;
+        width: 25px;
+        top: 25px;
+
+        .array-actions__button {
+          background: transparent !important;
+          border-radius: 0;
+        }
+
+        .collapsible__indicator {
+          display: none;
+        }
+      }
+    }
+
+    &:hover {
+      border: 1px dashed #ddd;
+
+      & > .collapsible__toggle-wrap {
+        .collapsible__drag,
+        .collapsible__toggle,
+        .collapsible__actions-wrap {
+          display: block;
+        }
+      }
+    }
+
+    &.collapsible--collapsed > .collapsible__toggle-wrap {
+      .blocks-field__block-header {
+        display: none;
+      }
+    }
+  }
+
+  // Add another block button
+  .blocks-field__add-button-wrap {
+    margin-top: 20px;
+  }
+}

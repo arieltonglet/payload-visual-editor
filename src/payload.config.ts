@@ -9,6 +9,7 @@ export default buildConfig({
   serverURL: 'http://localhost:3000',
   admin: {
     user: Users.slug,
+    css: path.resolve(__dirname, 'styles/overrides.scss'),
   },
   collections: [
     Categories,
