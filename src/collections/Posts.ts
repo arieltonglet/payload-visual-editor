@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload/types';
 import Image from '../blocks/Image';
 import Spacer from '../blocks/Spacer';
+import TextBlock from '../blocks/TextBlock';
 
 const Posts: CollectionConfig = {
   slug: 'posts',
@@ -41,7 +42,7 @@ const Posts: CollectionConfig = {
       type: 'blocks',
       minRows: 0,
       maxRows: 20,
-      blocks: [Image, Spacer],
+      blocks: [TextBlock, Image, Spacer],
       admin: {
         className: 'blocks-field--content',
       },
